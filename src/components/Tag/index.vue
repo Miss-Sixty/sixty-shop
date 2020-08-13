@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 21:38:28
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-13 22:26:58
+ * @LastEditTime: 2020-08-13 22:50:04
  * @FilePath: /six-ele/src/components/Tag/index.vue
 -->
 <template>
@@ -27,12 +27,12 @@ export default {
 <style lang="scss" scoped>
 @import "@/style/var.scss";
 .tag {
-  font-size: 10px;
-  padding: 0 6px;
+  font-size: 11px;
+  padding: 0 10px;
   background-color: $gray-3;
   display: inline-block;
   border-radius: $border-radius-max;
-  line-height: 20px;
+  line-height: 18px;
   text-align: center;
 }
 </style>
