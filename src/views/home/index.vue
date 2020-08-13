@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 18:48:56
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-13 22:42:52
+ * @LastEditTime: 2020-08-13 22:46:52
  * @FilePath: /six-ele/src/views/home/index.vue
 -->
 <template>
@@ -30,17 +30,21 @@
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
 
-    home
+    <grid>
+      <grid-item />
+    </grid>
   </div>
 </template>
 
 <script>
 import Search from "@/components/Search";
 import Tag from "@/components/Tag";
+import Grid from "@/components/Grid";
+import GridItem from "@/components/Grid-item";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
 export default {
-  components: { Search, Tag, Swiper, SwiperSlide },
+  components: { Search, Tag, Swiper, SwiperSlide, Grid, GridItem },
   data() {
     return {
       tagList: [
