@@ -1,9 +1,9 @@
 /*
  * @Author: 张喜贺
- * @Date: 2020-08-11 17:30:42
+ * @Date: 2020-08-13 18:48:11
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-11 17:39:11
- * @FilePath: /six-shop/.cz-config.js
+ * @LastEditTime: 2020-08-13 19:00:17
+ * @FilePath: /six-ele/.cz-config.js
  */
 module.exports = {
   types: [
@@ -16,7 +16,7 @@ module.exports = {
     { value: "test", name: "测试:    添加一个测试" },
     { value: "chore", name: "工具:    开发工具变动(构建、脚手架工具等)" },
     { value: "revert", name: "回滚:    代码回退" },
-    { value: "WIP", name: "WIP:      Work in progress" }
+    { value: "WIP", name: "WIP:      Work in progress" },
   ],
 
   scopes: [{ name: "changelog" }],
@@ -47,7 +47,7 @@ module.exports = {
     body: '长说明，使用"|"换行(可选):\n',
     breaking: "非兼容性说明 (可选):\n",
     footer: "关联关闭的issue，例如：#31, #34(可选):\n",
-    confirmCommit: "确定提交说明?"
+    confirmCommit: "确定提交说明?",
   },
 
   allowCustomScopes: true,
@@ -57,5 +57,5 @@ module.exports = {
   // skipQuestions: ["body", "footer"],
 
   // limit subject length
-  subjectLimit: 100
+  subjectLimit: 100,
 };
