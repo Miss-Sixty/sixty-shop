@@ -2,11 +2,11 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 19:07:01
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-13 19:14:02
+ * @LastEditTime: 2020-08-13 20:49:15
  * @FilePath: /six-ele/src/components/Tabbar/index.vue
 -->
 <template>
-  <div class="tabbar">
+  <div class="tabbar hairline--top">
     <slot />
   </div>
 </template>

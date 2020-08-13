@@ -2,11 +2,13 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 18:48:56
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-13 18:53:50
+ * @LastEditTime: 2020-08-13 20:53:40
  * @FilePath: /six-ele/src/views/home/index.vue
 -->
 <template>
-  <div>home</div>
+  <div>
+    home
+  </div>
 </template>
 
 <script>

@@ -1,0 +1,52 @@
+@import "./var";
+
+[class*="hairline"] {
+  &::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    border: 0 solid $border-color;
+    transform: scale(0.5);
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+}
+
+.hairline {
+  &,
+  &--top,
+  &--left,
+  &--right,
+  &--bottom,
+  &--surround,
+  &--top-bottom {
+    position: relative;
+  }
+
+  &--top::after {
+    border-top-width: $border-width-base;
+  }
+
+  &--left::after {
+    border-left-width: $border-width-base;
+  }
+
+  &--right::after {
+    border-right-width: $border-width-base;
+  }
+
+  &--bottom::after {
+    border-bottom-width: $border-width-base;
+  }
+
+  &--top-bottom::after {
+    border-width: $border-width-base 0;
+  }
+
+  &--surround::after {
+    border-width: $border-width-base;
+  }
+}
