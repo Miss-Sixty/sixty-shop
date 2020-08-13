@@ -2,14 +2,14 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 21:38:28
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-13 22:50:04
+ * @LastEditTime: 2020-08-13 23:10:57
  * @FilePath: /six-ele/src/components/Tag/index.vue
 -->
 <template>
-  <div class="tag" :style="`color:${color};background:${bgColor}`">
-    <svg-icon v-if="icon" :icon-class="icon" />
+  <span class="tag" :style="`color:${color};background:${bgColor}`">
+    <svg-icon v-if="icon" :icon-class="icon" size="10px" />
     {{ text }}
-  </div>
+  </span>
 </template>
 
 <script>
@@ -27,12 +27,17 @@ export default {
 <style lang="scss" scoped>
 @import "@/style/var.scss";
 .tag {
-  font-size: 11px;
-  padding: 0 10px;
+  font-size: 12px;
+  padding: 2px 8px;
   background-color: $gray-3;
-  display: inline-block;
   border-radius: $border-radius-max;
-  line-height: 18px;
-  text-align: center;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  line-height: 16px;
+  vertical-align: middle;
+  .svg-icon {
+    margin-right: 4px;
+  }
 }
 </style>
