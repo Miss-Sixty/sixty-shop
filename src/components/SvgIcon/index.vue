@@ -2,11 +2,16 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 19:39:17
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-13 19:47:19
+ * @LastEditTime: 2020-08-13 20:29:56
  * @FilePath: /six-ele/src/components/SvgIcon/index.vue
 -->
 <template>
-  <svg :class="svgClass" aria-hidden="true" v-on="$listeners">
+  <svg
+    :class="svgClass"
+    aria-hidden="true"
+    v-on="$listeners"
+    :style="{ fontSize: size }"
+  >
     <use :xlink:href="iconName" />
   </svg>
 </template>
@@ -23,6 +28,7 @@ export default {
       type: String,
       default: "",
     },
+    size: String,
   },
   computed: {
     iconName() {

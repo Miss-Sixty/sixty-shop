@@ -9,6 +9,7 @@
     "lint": "vue-cli-service lint",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
+    "export:svg": "node ./src/icons/export.js",
     "cz:changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "dependencies": {
