@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 21:38:28
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-13 22:01:23
+ * @LastEditTime: 2020-08-13 22:26:58
  * @FilePath: /six-ele/src/components/Tag/index.vue
 -->
 <template>
@@ -31,7 +31,7 @@ export default {
   padding: 0 6px;
   background-color: $gray-3;
   display: inline-block;
-  border-radius: $border-radius;
+  border-radius: $border-radius-max;
   line-height: 20px;
   text-align: center;
 }

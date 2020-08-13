@@ -37,7 +37,7 @@ export default {
   display: flex;
   align-items: center;
   background-color: $gray-3;
-  border-radius: $border-radius;
+  border-radius: $border-radius-max;
   padding-right: 4px;
   font-size: 14px;
   .svg-icon {

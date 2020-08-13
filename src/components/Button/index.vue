@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 20:56:14
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-13 21:33:21
+ * @LastEditTime: 2020-08-13 22:26:48
  * @FilePath: /six-ele/src/components/Button/index.vue
 -->
 <template>
@@ -33,7 +33,7 @@ export default {
   height: 28px;
   padding: 0 14px;
   &.round {
-    border-radius: $border-radius;
+    border-radius: $border-radius-max;
   }
 }
 </style>
