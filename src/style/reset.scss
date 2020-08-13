@@ -176,7 +176,8 @@ a:hover {
 }
 
 // 去除蓝色边框
-input {
+input,
+button {
   border: 0;
   outline: none;
 }
