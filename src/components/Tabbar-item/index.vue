@@ -2,12 +2,12 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 19:09:11
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-13 19:19:56
+ * @LastEditTime: 2020-08-13 19:52:55
  * @FilePath: /six-ele/src/components/Tabbar-item/index.vue
 -->
 <template>
   <router-link :to="to" class="tabbar-item" active-class="active">
-    <i>12</i>
+    <svg-icon icon-class="lingshi" />
     <p>{{ title }}</p>
   </router-link>
 </template>
