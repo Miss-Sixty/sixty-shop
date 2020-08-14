@@ -24,3 +24,29 @@ $border-radius-sm: 2px;
 $border-radius-md: 4px;
 $border-radius-lg: 8px;
 $border-radius-max: 999px;
+
+// Padding
+$padding-base: 4px;
+$padding-xs: $padding-base * 2;
+$padding-sm: $padding-base * 3;
+$padding-md: $padding-base * 4;
+$padding-lg: $padding-base * 6;
+$padding-xl: $padding-base * 8;
+
+// Font
+$font-size-xs: 10px;
+$font-size-sm: 12px;
+$font-size-md: 14px;
+$font-size-lg: 16px;
+$font-weight-bold: 500;
+$line-height-xs: 14px;
+$line-height-sm: 18px;
+$line-height-md: 20px;
+$line-height-lg: 22px;
+
+// GridItem
+$grid-item-content-padding: $padding-base;
+$grid-item-content-background-color: $white;
+$grid-item-text-color: $gray-7;
+$grid-item-icon-size: 28px;
+$grid-item-text-font-size: $font-size-sm;

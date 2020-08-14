@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 18:48:56
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-13 22:46:52
+ * @LastEditTime: 2020-08-14 15:39:22
  * @FilePath: /six-ele/src/views/home/index.vue
 -->
 <template>
@@ -25,13 +25,27 @@
         v-for="(item, index) in swiperList"
         :key="index"
       >
-        <img :src="item" alt="" />
+        <img :src="item" alt />
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
 
-    <grid>
-      <grid-item />
+    <grid column-num="5" icon-size="30px" square style="padding:10px 0">
+      <grid-item
+        v-for="(item, index) in gridList1"
+        :key="index"
+        :icon="item.icon"
+        :text="item.text"
+      />
+    </grid>
+
+    <grid column-num="5" icon-size="18px">
+      <grid-item
+        v-for="(item, index) in gridList2"
+        :key="index"
+        :icon="item.icon"
+        :text="item.text"
+      />
     </grid>
   </div>
 </template>
@@ -87,6 +101,70 @@ export default {
           bulletActiveClass: "ele-bullet-active",
         },
       },
+      gridList1: [
+        {
+          icon: "gourmet",
+          text: "美食外卖",
+        },
+        {
+          icon: "shop",
+          text: "超时便利",
+        },
+        {
+          icon: "envelope",
+          text: "团购优惠",
+        },
+        {
+          icon: "game",
+          text: "快速自取",
+        },
+        {
+          icon: "play",
+          text: "休闲玩乐",
+        },
+      ],
+      gridList2: [
+        {
+          icon: "chicken",
+          text: "晚餐",
+        },
+        {
+          icon: "fruit",
+          text: "水果",
+        },
+        {
+          icon: "drink",
+          text: "甜品饮品",
+        },
+        {
+          icon: "dish",
+          text: "买菜",
+        },
+        {
+          icon: "drug",
+          text: "送药上门",
+        },
+        {
+          icon: "woman",
+          text: "丽人/医美",
+        },
+        {
+          icon: "coupon",
+          text: "省钱好券",
+        },
+        {
+          icon: "takeaway",
+          text: "配送减免",
+        },
+        {
+          icon: "box",
+          text: "跑腿代购",
+        },
+        {
+          icon: "more",
+          text: "全部分类",
+        },
+      ],
     };
   },
 };
