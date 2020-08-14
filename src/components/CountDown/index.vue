@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-14 15:41:16
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-14 19:53:31
+ * @LastEditTime: 2020-08-14 19:59:00
  * @FilePath: /six-ele/src/components/CountDown/index.vue
 -->
 <template>
@@ -33,7 +33,6 @@ export default {
       type: String,
       default: "HH:mm:ss",
     },
-    millisecond: Boolean,
   },
   computed: {
     timeData() {

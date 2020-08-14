@@ -48,7 +48,7 @@
       />
     </grid>
 
-    <count-down :time="time" millisecond>
+    <count-down :time="time">
       <template v-slot="{ timeData }">
         <span class="home-time__block">{{ timeData.hours }}</span>
         <span class="home-time__colon">:</span>
