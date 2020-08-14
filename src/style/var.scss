@@ -17,6 +17,9 @@ $orange-dark: #ed6a0c;
 $orange-light: #fffbe8;
 $green: #07c160;
 
+// Component Colors
+$text-color: $gray-8;
+
 // Border
 $border-color: $gray-3;
 $border-width-base: 1px;
@@ -50,3 +53,8 @@ $grid-item-content-background-color: $white;
 $grid-item-text-color: $gray-7;
 $grid-item-icon-size: 28px;
 $grid-item-text-font-size: $font-size-sm;
+
+// CountDown
+$count-down-text-color: $text-color;
+$count-down-font-size: $font-size-md;
+$count-down-line-height: $line-height-md;

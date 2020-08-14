@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 18:48:56
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-14 15:39:22
+ * @LastEditTime: 2020-08-14 19:56:36
  * @FilePath: /six-ele/src/views/home/index.vue
 -->
 <template>
@@ -47,6 +47,16 @@
         :text="item.text"
       />
     </grid>
+
+    <count-down :time="time" millisecond>
+      <template v-slot="{ timeData }">
+        <span class="home-time__block">{{ timeData.hours }}</span>
+        <span class="home-time__colon">:</span>
+        <span class="home-time__block">{{ timeData.minutes }}</span>
+        <span class="home-time__colon">:</span>
+        <span class="home-time__block">{{ timeData.seconds }}</span>
+      </template>
+    </count-down>
   </div>
 </template>
 
@@ -55,10 +65,11 @@ import Search from "@/components/Search";
 import Tag from "@/components/Tag";
 import Grid from "@/components/Grid";
 import GridItem from "@/components/Grid-item";
+import CountDown from "@/components/CountDown";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
 export default {
-  components: { Search, Tag, Swiper, SwiperSlide, Grid, GridItem },
+  components: { Search, Tag, Swiper, SwiperSlide, Grid, GridItem, CountDown },
   data() {
     return {
       tagList: [
@@ -165,6 +176,7 @@ export default {
           text: "全部分类",
         },
       ],
+      time: 30 * 60 * 60 * 1000,
     };
   },
 };
@@ -202,6 +214,23 @@ export default {
     }
     /deep/.swiper-pagination {
       bottom: 0;
+    }
+  }
+
+  &-time {
+    &__colon {
+      display: inline-block;
+      margin: 0 2px;
+      color: #fe4b32;
+    }
+    &__block {
+      display: inline-block;
+      width: 20px;
+      color: #fff;
+      font-size: 12px;
+      text-align: center;
+      background-color: #fe4b32;
+      border-radius: $border-radius-md;
     }
   }
 }
