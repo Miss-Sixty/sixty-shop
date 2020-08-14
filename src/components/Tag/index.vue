@@ -2,11 +2,14 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 21:38:28
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-13 23:10:57
+ * @LastEditTime: 2020-08-14 20:32:23
  * @FilePath: /six-ele/src/components/Tag/index.vue
 -->
 <template>
-  <span class="tag" :style="`color:${color};background:${bgColor}`">
+  <span
+    class="tag"
+    :style="`color:${color};background:${bgColor};border-radius:${radius}`"
+  >
     <svg-icon v-if="icon" :icon-class="icon" size="10px" />
     {{ text }}
   </span>
@@ -20,6 +23,7 @@ export default {
     color: String,
     bgColor: String,
     icon: String,
+    radius: String,
   },
 };
 </script>
