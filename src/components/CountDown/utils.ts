@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-14 15:51:52
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-14 19:23:44
+ * @LastEditTime: 2020-08-15 12:20:02
  * @FilePath: /six-ele/src/components/CountDown/utils.ts
  */
 export type TimeData = {
@@ -34,7 +34,7 @@ export function parseTimeData(time: number): TimeData {
 export function parseFormat(format: string, timeData: TimeData): string {
   const { days, hours, minutes, seconds } = timeData;
 
-  const o = {
+  const o: { [propName: string]: number } = {
     "D+": days, //日
     "H+": hours, //小时
     "m+": minutes, //分
@@ -45,7 +45,9 @@ export function parseFormat(format: string, timeData: TimeData): string {
     if (new RegExp(`(${k})`).test(format)) {
       format = format.replace(
         RegExp.$1,
-        RegExp.$1.length === 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length)
+        RegExp.$1.length === 1
+          ? `${o[k]}`
+          : `00${o[k]}`.substr(`${o[k]}`.length)
       );
     }
   }
@@ -53,7 +55,6 @@ export function parseFormat(format: string, timeData: TimeData): string {
 }
 
 let prev = Date.now();
-/* istanbul ignore next */
 function fallback(fn: FrameRequestCallback) {
   const curr = Date.now();
   const ms = Math.max(0, 16 - (curr - prev));
