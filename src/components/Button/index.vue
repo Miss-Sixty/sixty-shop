@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 20:56:14
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-13 22:26:48
+ * @LastEditTime: 2020-08-16 14:20:00
  * @FilePath: /six-ele/src/components/Button/index.vue
 -->
 <template>
@@ -29,9 +29,11 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/style/var.scss";
+@import "@/style/dark.scss";
 .button {
   height: 28px;
   padding: 0 14px;
+  @include dark-filter();
   &.round {
     border-radius: $border-radius-max;
   }

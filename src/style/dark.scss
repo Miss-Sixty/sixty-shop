@@ -1,0 +1,45 @@
+@import "./var.scss";
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #151515;
+  }
+  img {
+    filter: brightness(0.8);
+  }
+}
+
+@mixin bg-color() {
+  background-color: #fff;
+  @media (prefers-color-scheme: dark) {
+    background-color: #151515;
+  }
+}
+
+@mixin dark-filter() {
+  filter: brightness(1);
+  @media (prefers-color-scheme: dark) {
+    filter: brightness(0.8);
+  }
+}
+
+@mixin dark-layer() {
+  background-color: $gray-3;
+  @media (prefers-color-scheme: dark) {
+    background-color: #202020;
+  }
+}
+
+@mixin dark-ccc() {
+  background-color: #fff;
+  @media (prefers-color-scheme: dark) {
+    background-color: #ccc;
+  }
+}
+
+// @mixin dark-red($color,$bgColor) {
+//   color: $red;
+//   @media (prefers-color-scheme: dark) {
+//     color: #ca3825;
+//   }
+// }

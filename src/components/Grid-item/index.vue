@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 22:45:16
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-14 15:36:02
+ * @LastEditTime: 2020-08-16 14:21:35
  * @FilePath: /six-ele/src/components/Grid-item/index.vue
 -->
 <template>
@@ -53,6 +53,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/style/var.scss";
+@import "@/style/dark.scss";
 .grid-item {
   position: relative;
   &__content {
@@ -63,7 +64,7 @@ export default {
     height: 100%;
     padding: $grid-item-content-padding;
     background-color: $grid-item-content-background-color;
-
+    @include bg-color();
     &--square {
       position: absolute;
       top: 0;

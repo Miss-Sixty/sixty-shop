@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 18:48:56
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-14 19:56:36
+ * @LastEditTime: 2020-08-16 14:44:43
  * @FilePath: /six-ele/src/views/home/index.vue
 -->
 <template>
@@ -48,15 +48,86 @@
       />
     </grid>
 
-    <count-down :time="time">
-      <template v-slot="{ timeData }">
-        <span class="home-time__block">{{ timeData.hours }}</span>
-        <span class="home-time__colon">:</span>
-        <span class="home-time__block">{{ timeData.minutes }}</span>
-        <span class="home-time__colon">:</span>
-        <span class="home-time__block">{{ timeData.seconds }}</span>
-      </template>
-    </count-down>
+    <ele-row class="home-card">
+      <ele-col span="12">
+        <card :title="killData.title" class="hairline--right">
+          <template #title-right>
+            <count-down :time="killData.time">
+              <template v-slot="{ timeData }">
+                <span class="home-time__block">
+                  {{
+                    10 > timeData.hours ? "0" + timeData.hours : timeData.hours
+                  }}
+                </span>
+                <span class="home-time__colon">:</span>
+                <span class="home-time__block">
+                  {{
+                    10 > timeData.minutes
+                      ? "0" + timeData.minutes
+                      : timeData.minutes
+                  }}
+                </span>
+                <span class="home-time__colon">:</span>
+                <span class="home-time__block">
+                  {{
+                    10 > timeData.seconds
+                      ? "0" + timeData.seconds
+                      : timeData.seconds
+                  }}
+                </span>
+              </template>
+            </count-down>
+          </template>
+          <div class="card-left-content">
+            <div class="card-left-content__img">
+              <img :src="killData.imgUrl" width="100%" height="100%" />
+              <tag
+                class="tag"
+                :text="killData.tag"
+                color="#fff"
+                bg-color="#ff4b33"
+                radius="10px 10px 10px 2px"
+              />
+            </div>
+            <div class="card-left-content__text ellipsis">
+              <span>¥{{ killData.discount }}</span>
+              <span>¥{{ killData.money }}</span>
+              <span>{{ killData.name }}</span>
+            </div>
+          </div>
+        </card>
+      </ele-col>
+
+      <ele-col span="12">
+        <card :title="recData.title">
+          <template #title-right>
+            <tag
+              :text="recData.tag"
+              color="#8800d6"
+              bg-color="#f1e7fe"
+              radius="4px"
+            />
+          </template>
+          <ele-row gutter="8">
+            <ele-col
+              span="12"
+              v-for="(item, index) in recData.goods"
+              :key="index"
+            >
+              <div class="card-right-content">
+                <div class="card-right-content__img">
+                  <img :src="item.url" width="100%" height="100%" />
+                  <p>{{ item.tag }}</p>
+                </div>
+                <p class="card-right-content__text ellipsis">
+                  {{ item.name }}
+                </p>
+              </div>
+            </ele-col>
+          </ele-row>
+        </card>
+      </ele-col>
+    </ele-row>
   </div>
 </template>
 
@@ -66,10 +137,24 @@ import Tag from "@/components/Tag";
 import Grid from "@/components/Grid";
 import GridItem from "@/components/Grid-item";
 import CountDown from "@/components/CountDown";
+import Card from "./components/Card";
+import EleCol from "@/components/Col";
+import EleRow from "@/components/Row";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
 export default {
-  components: { Search, Tag, Swiper, SwiperSlide, Grid, GridItem, CountDown },
+  components: {
+    Search,
+    Tag,
+    Swiper,
+    SwiperSlide,
+    Grid,
+    GridItem,
+    CountDown,
+    Card,
+    EleRow,
+    EleCol,
+  },
   data() {
     return {
       tagList: [
@@ -176,7 +261,34 @@ export default {
           text: "全部分类",
         },
       ],
-      time: 30 * 60 * 60 * 1000,
+      killData: {
+        title: "限时秒杀",
+        time: 30 * 60 * 60 * 1000,
+        imgUrl:
+          "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3728634894,1931124514&fm=26&gp=0.jpg",
+        tag: "3.8折",
+        money: "41.99",
+        discount: "15.99",
+        name: "干拌牛肉粉",
+      },
+      recData: {
+        title: "有好店",
+        tag: "专属晚餐",
+        goods: [
+          {
+            url:
+              "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3728634894,1931124514&fm=26&gp=0.jpg",
+            tag: "猜你喜欢",
+            name: "汉库麻辣香锅",
+          },
+          {
+            url:
+              "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3728634894,1931124514&fm=26&gp=0.jpg",
+            tag: "猜你喜欢",
+            name: "汉库麻辣香锅",
+          },
+        ],
+      },
     };
   },
 };
@@ -184,6 +296,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/style/var.scss";
+@import "@/style/dark.scss";
 .home {
   &-tag {
     padding: 0 12px;
@@ -208,6 +321,7 @@ export default {
       background: #fff;
       opacity: 0.2;
       margin: 0 2px;
+      @include dark-ccc;
     }
     /deep/.ele-bullet-active {
       opacity: 1;
@@ -216,21 +330,91 @@ export default {
       bottom: 0;
     }
   }
-
   &-time {
     &__colon {
       display: inline-block;
-      margin: 0 2px;
+      margin: 0 1px;
       color: #fe4b32;
+      @media (prefers-color-scheme: dark) {
+        color: #ca3825;
+      }
     }
     &__block {
       display: inline-block;
-      width: 20px;
+      width: 18px;
+      height: 16px;
+      line-height: 16px;
       color: #fff;
       font-size: 12px;
       text-align: center;
       background-color: #fe4b32;
-      border-radius: $border-radius-md;
+      @include dark-filter();
+      border-radius: $border-radius-sm;
+    }
+  }
+
+  &-card {
+    margin: $padding-sm;
+    // background-color: lawngreen;
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.16);
+    @media (prefers-color-scheme: dark) {
+      box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.48),
+        0 6px 16px 0 rgba(0, 0, 0, 0.32), 0 9px 28px 8px rgba(0, 0, 0, 0.2);
+      background-color: #1f1f1f;
+    }
+    border-radius: $border-radius-lg;
+    display: flex;
+    .card-left-content {
+      &__img {
+        position: relative;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+        height: 95px;
+        .tag {
+          position: absolute;
+          left: 3px;
+          bottom: 3px;
+        }
+      }
+      &__text {
+        margin-top: 8px;
+        line-height: 1;
+        span {
+          margin-right: 4px;
+          &:nth-of-type(1) {
+            color: $red;
+            font-weight: $font-weight-bold;
+          }
+          &:nth-of-type(2) {
+            color: $gray-3;
+            font-size: $font-size-sm;
+            text-decoration: line-through;
+          }
+        }
+      }
+    }
+    .card-right-content {
+      &__img {
+        position: relative;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+        height: 95px;
+        p {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background-color: #2f1e11;
+          color: #e8b457;
+          right: 0;
+          text-align: center;
+          font-size: $font-size-sm;
+          padding: 4px;
+        }
+      }
+      &__text {
+        margin-top: 8px;
+        line-height: 1;
+      }
     }
   }
 }
