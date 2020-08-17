@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 18:48:56
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-17 23:44:18
+ * @LastEditTime: 2020-08-18 00:40:44
  * @FilePath: /six-ele/src/views/home/index.vue
 -->
 <template>
@@ -20,7 +20,11 @@
     </div>
 
     <swiper :options="swiperOptions" class="swiper">
-      <swiper-slide class="swiper-slide" v-for="(item, index) in swiperList" :key="index">
+      <swiper-slide
+        class="swiper-slide"
+        v-for="(item, index) in swiperList"
+        :key="index"
+      >
         <img :src="item" alt />
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -35,31 +39,31 @@
       />
     </grid>
 
-    <ele-row class="home-card">
-      <ele-col span="12">
+    <six-row class="home-card">
+      <six-col span="12">
         <card :title="killData.title" class="hairline--right">
           <template #title-right>
             <count-down :time="killData.time">
               <template v-slot="{ timeData }">
                 <span class="home-time__block">
                   {{
-                  10 > timeData.hours ? "0" + timeData.hours : timeData.hours
+                    10 > timeData.hours ? "0" + timeData.hours : timeData.hours
                   }}
                 </span>
                 <span class="home-time__colon">:</span>
                 <span class="home-time__block">
                   {{
-                  10 > timeData.minutes
-                  ? "0" + timeData.minutes
-                  : timeData.minutes
+                    10 > timeData.minutes
+                      ? "0" + timeData.minutes
+                      : timeData.minutes
                   }}
                 </span>
                 <span class="home-time__colon">:</span>
                 <span class="home-time__block">
                   {{
-                  10 > timeData.seconds
-                  ? "0" + timeData.seconds
-                  : timeData.seconds
+                    10 > timeData.seconds
+                      ? "0" + timeData.seconds
+                      : timeData.seconds
                   }}
                 </span>
               </template>
@@ -83,15 +87,24 @@
             </div>
           </div>
         </card>
-      </ele-col>
+      </six-col>
 
-      <ele-col span="12">
+      <six-col span="12">
         <card :title="recData.title">
           <template #title-right>
-            <tag :text="recData.tag" color="#8800d6" bg-color="#f1e7fe" radius="4px" />
+            <tag
+              :text="recData.tag"
+              color="#8800d6"
+              bg-color="#f1e7fe"
+              radius="4px"
+            />
           </template>
-          <ele-row gutter="8">
-            <ele-col span="12" v-for="(item, index) in recData.goods" :key="index">
+          <six-row gutter="8">
+            <six-col
+              span="12"
+              v-for="(item, index) in recData.goods"
+              :key="index"
+            >
               <div class="card-right-content">
                 <div class="card-right-content__img">
                   <img :src="item.url" width="100%" height="100%" />
@@ -99,11 +112,26 @@
                 </div>
                 <p class="card-right-content__text ellipsis">{{ item.name }}</p>
               </div>
-            </ele-col>
-          </ele-row>
+            </six-col>
+          </six-row>
         </card>
-      </ele-col>
-    </ele-row>
+      </six-col>
+    </six-row>
+
+    <div class="home-hotProducts">
+      <p>最热商品</p>
+      <six-row gutter="8">
+        <six-col span="12">
+          <hot-products-list />
+        </six-col>
+        <six-col span="12">
+          <hot-products-list />
+        </six-col>
+        <six-col span="12">
+          <hot-products-list />
+        </six-col>
+      </six-row>
+    </div>
   </div>
 </template>
 
@@ -114,8 +142,9 @@ import Grid from "@/components/Grid";
 import GridItem from "@/components/Grid-item";
 import CountDown from "@/components/CountDown";
 import Card from "./components/Card";
-import EleCol from "@/components/Col";
-import EleRow from "@/components/Row";
+import SixCol from "@/components/Col";
+import SixRow from "@/components/Row";
+import HotProductsList from "./components/HotProductsList";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
 export default {
@@ -128,8 +157,9 @@ export default {
     GridItem,
     CountDown,
     Card,
-    EleRow,
-    EleCol
+    SixRow,
+    SixCol,
+    HotProductsList,
   },
   data() {
     return {
@@ -138,20 +168,20 @@ export default {
           text: "88金粉节",
           color: "#FF5028",
           bgColor: "#FDEFED",
-          icon: "hot"
+          icon: "hot",
         },
         {
-          text: "麻辣烫"
+          text: "麻辣烫",
         },
         {
-          text: "麻辣香锅"
+          text: "麻辣香锅",
         },
         {
-          text: "汉堡"
+          text: "汉堡",
         },
         {
-          text: "奶茶"
-        }
+          text: "奶茶",
+        },
       ],
       swiperList: [
         "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3376774905,3835988815&fm=26&gp=0.jpg",
@@ -159,7 +189,7 @@ export default {
         "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597338557819&di=19959ec2b012dbec53a863616c1717fc&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2018-01-30%2F5a6fe1a45bd72.jpg",
         "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597338557818&di=ee1c344e735fb2c694de05810d933b5a&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F5%2F5916758468796.jpg",
         "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597338557818&di=27c3917e22963e3549111637d96ef23f&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F0%2F59929c0367397.jpg",
-        "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3728634894,1931124514&fm=26&gp=0.jpg"
+        "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3728634894,1931124514&fm=26&gp=0.jpg",
       ],
       swiperOptions: {
         loop: true,
@@ -167,50 +197,50 @@ export default {
         pagination: {
           el: ".swiper-pagination",
           bulletClass: "ele-bullet", //需设置.my-bullet样式
-          bulletActiveClass: "ele-bullet-active"
-        }
+          bulletActiveClass: "ele-bullet-active",
+        },
       },
       gridList2: [
         {
           icon: "chicken",
-          text: "晚餐"
+          text: "晚餐",
         },
         {
           icon: "fruit",
-          text: "水果"
+          text: "水果",
         },
         {
           icon: "drink",
-          text: "甜品饮品"
+          text: "甜品饮品",
         },
         {
           icon: "dish",
-          text: "买菜"
+          text: "买菜",
         },
         {
           icon: "drug",
-          text: "送药上门"
+          text: "送药上门",
         },
         {
           icon: "woman",
-          text: "丽人/医美"
+          text: "丽人/医美",
         },
         {
           icon: "coupon",
-          text: "省钱好券"
+          text: "省钱好券",
         },
         {
           icon: "takeaway",
-          text: "配送减免"
+          text: "配送减免",
         },
         {
           icon: "box",
-          text: "跑腿代购"
+          text: "跑腿代购",
         },
         {
           icon: "more",
-          text: "全部分类"
-        }
+          text: "全部分类",
+        },
       ],
       killData: {
         title: "限时秒杀",
@@ -220,7 +250,7 @@ export default {
         tag: "3.8折",
         money: "41.99",
         discount: "15.99",
-        name: "干拌牛肉粉"
+        name: "干拌牛肉粉",
       },
       recData: {
         title: "有好店",
@@ -230,24 +260,25 @@ export default {
             url:
               "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3728634894,1931124514&fm=26&gp=0.jpg",
             tag: "猜你喜欢",
-            name: "汉库麻辣香锅"
+            name: "汉库麻辣香锅",
           },
           {
             url:
               "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3728634894,1931124514&fm=26&gp=0.jpg",
             tag: "猜你喜欢",
-            name: "汉库麻辣香锅"
-          }
-        ]
-      }
+            name: "汉库麻辣香锅",
+          },
+        ],
+      },
     };
-  }
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/style/var.scss";
 .home {
+  padding-bottom: 50px;
   &-tag {
     padding: 0 12px;
     > * {
@@ -354,6 +385,13 @@ export default {
         margin-top: 8px;
         line-height: 1;
       }
+    }
+  }
+
+  &-hotProducts {
+    margin: $padding-sm;
+    > p {
+      margin-bottom: 5px;
     }
   }
 }

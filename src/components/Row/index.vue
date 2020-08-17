@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-14 21:11:33
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-14 23:18:20
+ * @LastEditTime: 2020-08-18 00:11:06
  * @FilePath: /six-ele/src/components/Row/index.vue
 -->
 <template>
@@ -84,6 +84,7 @@ export default {
 
 <style lang="scss" scoped>
 .row {
+  overflow: hidden;
   &--flex {
     display: flex;
 
