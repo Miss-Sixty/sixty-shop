@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 19:07:01
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-13 20:49:15
+ * @LastEditTime: 2020-08-18 00:02:08
  * @FilePath: /six-ele/src/components/Tabbar/index.vue
 -->
 <template>
@@ -24,5 +24,6 @@ export default {};
   right: 0;
   bottom: 0;
   height: 50px;
+  background-color: #fff;
 }
 </style>
