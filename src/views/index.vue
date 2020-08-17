@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 18:49:00
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-16 02:07:42
+ * @LastEditTime: 2020-08-18 00:50:34
  * @FilePath: /six-ele/src/views/index.vue
 -->
 <template>
@@ -31,18 +31,18 @@ export default {
       tabbarItems: [
         {
           icon: "home",
-          title: "外卖",
+          title: "首页",
           to: "/home",
         },
         {
-          icon: "rec",
-          title: "真香",
-          to: "/rec",
+          icon: "order",
+          title: "分类",
+          to: "/sort",
         },
         {
-          icon: "order",
-          title: "订单",
-          to: "/order",
+          icon: "rec",
+          title: "购物车",
+          to: "/shoppingCart",
         },
         {
           icon: "me",
