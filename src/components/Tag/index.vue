@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 21:38:28
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-16 14:11:18
+ * @LastEditTime: 2020-08-17 23:50:41
  * @FilePath: /six-ele/src/components/Tag/index.vue
 -->
 <template>
@@ -26,8 +26,8 @@ export default {
     color: String,
     bgColor: String,
     icon: String,
-    radius: String,
-  },
+    radius: String
+  }
 };
 </script>
 
@@ -38,13 +38,10 @@ export default {
   font-size: 12px;
   padding: 2px 8px;
   background-color: $gray-3;
-  @include dark-filter();
   border-radius: $border-radius-max;
   position: relative;
   display: inline-flex;
   align-items: center;
-  line-height: 16px;
-  vertical-align: middle;
   .svg-icon {
     margin-right: 4px;
   }

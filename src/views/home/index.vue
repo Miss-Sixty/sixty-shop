@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 18:48:56
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-16 14:44:43
+ * @LastEditTime: 2020-08-17 23:44:18
  * @FilePath: /six-ele/src/views/home/index.vue
 -->
 <template>
@@ -20,26 +20,13 @@
     </div>
 
     <swiper :options="swiperOptions" class="swiper">
-      <swiper-slide
-        class="swiper-slide"
-        v-for="(item, index) in swiperList"
-        :key="index"
-      >
+      <swiper-slide class="swiper-slide" v-for="(item, index) in swiperList" :key="index">
         <img :src="item" alt />
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
 
-    <grid column-num="5" icon-size="30px" square style="padding:10px 0">
-      <grid-item
-        v-for="(item, index) in gridList1"
-        :key="index"
-        :icon="item.icon"
-        :text="item.text"
-      />
-    </grid>
-
-    <grid column-num="5" icon-size="18px">
+    <grid column-num="5" icon-size="20">
       <grid-item
         v-for="(item, index) in gridList2"
         :key="index"
@@ -56,23 +43,23 @@
               <template v-slot="{ timeData }">
                 <span class="home-time__block">
                   {{
-                    10 > timeData.hours ? "0" + timeData.hours : timeData.hours
+                  10 > timeData.hours ? "0" + timeData.hours : timeData.hours
                   }}
                 </span>
                 <span class="home-time__colon">:</span>
                 <span class="home-time__block">
                   {{
-                    10 > timeData.minutes
-                      ? "0" + timeData.minutes
-                      : timeData.minutes
+                  10 > timeData.minutes
+                  ? "0" + timeData.minutes
+                  : timeData.minutes
                   }}
                 </span>
                 <span class="home-time__colon">:</span>
                 <span class="home-time__block">
                   {{
-                    10 > timeData.seconds
-                      ? "0" + timeData.seconds
-                      : timeData.seconds
+                  10 > timeData.seconds
+                  ? "0" + timeData.seconds
+                  : timeData.seconds
                   }}
                 </span>
               </template>
@@ -101,27 +88,16 @@
       <ele-col span="12">
         <card :title="recData.title">
           <template #title-right>
-            <tag
-              :text="recData.tag"
-              color="#8800d6"
-              bg-color="#f1e7fe"
-              radius="4px"
-            />
+            <tag :text="recData.tag" color="#8800d6" bg-color="#f1e7fe" radius="4px" />
           </template>
           <ele-row gutter="8">
-            <ele-col
-              span="12"
-              v-for="(item, index) in recData.goods"
-              :key="index"
-            >
+            <ele-col span="12" v-for="(item, index) in recData.goods" :key="index">
               <div class="card-right-content">
                 <div class="card-right-content__img">
                   <img :src="item.url" width="100%" height="100%" />
                   <p>{{ item.tag }}</p>
                 </div>
-                <p class="card-right-content__text ellipsis">
-                  {{ item.name }}
-                </p>
+                <p class="card-right-content__text ellipsis">{{ item.name }}</p>
               </div>
             </ele-col>
           </ele-row>
@@ -153,7 +129,7 @@ export default {
     CountDown,
     Card,
     EleRow,
-    EleCol,
+    EleCol
   },
   data() {
     return {
@@ -162,23 +138,20 @@ export default {
           text: "88金粉节",
           color: "#FF5028",
           bgColor: "#FDEFED",
-          icon: "hot",
+          icon: "hot"
         },
         {
-          text: "麻辣烫",
+          text: "麻辣烫"
         },
         {
-          text: "麻辣香锅",
+          text: "麻辣香锅"
         },
         {
-          text: "华莱士",
+          text: "汉堡"
         },
         {
-          text: "CoCo",
-        },
-        {
-          text: "奶茶",
-        },
+          text: "奶茶"
+        }
       ],
       swiperList: [
         "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3376774905,3835988815&fm=26&gp=0.jpg",
@@ -186,7 +159,7 @@ export default {
         "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597338557819&di=19959ec2b012dbec53a863616c1717fc&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2018-01-30%2F5a6fe1a45bd72.jpg",
         "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597338557818&di=ee1c344e735fb2c694de05810d933b5a&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F5%2F5916758468796.jpg",
         "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597338557818&di=27c3917e22963e3549111637d96ef23f&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F0%2F59929c0367397.jpg",
-        "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3728634894,1931124514&fm=26&gp=0.jpg",
+        "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3728634894,1931124514&fm=26&gp=0.jpg"
       ],
       swiperOptions: {
         loop: true,
@@ -194,72 +167,50 @@ export default {
         pagination: {
           el: ".swiper-pagination",
           bulletClass: "ele-bullet", //需设置.my-bullet样式
-          bulletActiveClass: "ele-bullet-active",
-        },
+          bulletActiveClass: "ele-bullet-active"
+        }
       },
-      gridList1: [
-        {
-          icon: "gourmet",
-          text: "美食外卖",
-        },
-        {
-          icon: "shop",
-          text: "超时便利",
-        },
-        {
-          icon: "envelope",
-          text: "团购优惠",
-        },
-        {
-          icon: "game",
-          text: "快速自取",
-        },
-        {
-          icon: "play",
-          text: "休闲玩乐",
-        },
-      ],
       gridList2: [
         {
           icon: "chicken",
-          text: "晚餐",
+          text: "晚餐"
         },
         {
           icon: "fruit",
-          text: "水果",
+          text: "水果"
         },
         {
           icon: "drink",
-          text: "甜品饮品",
+          text: "甜品饮品"
         },
         {
           icon: "dish",
-          text: "买菜",
+          text: "买菜"
         },
         {
           icon: "drug",
-          text: "送药上门",
+          text: "送药上门"
         },
         {
           icon: "woman",
-          text: "丽人/医美",
+          text: "丽人/医美"
         },
         {
           icon: "coupon",
-          text: "省钱好券",
+          text: "省钱好券"
         },
         {
           icon: "takeaway",
-          text: "配送减免",
+          text: "配送减免"
         },
         {
           icon: "box",
-          text: "跑腿代购",
+          text: "跑腿代购"
         },
         {
           icon: "more",
-          text: "全部分类",
-        },
+          text: "全部分类"
+        }
       ],
       killData: {
         title: "限时秒杀",
@@ -269,7 +220,7 @@ export default {
         tag: "3.8折",
         money: "41.99",
         discount: "15.99",
-        name: "干拌牛肉粉",
+        name: "干拌牛肉粉"
       },
       recData: {
         title: "有好店",
@@ -279,24 +230,23 @@ export default {
             url:
               "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3728634894,1931124514&fm=26&gp=0.jpg",
             tag: "猜你喜欢",
-            name: "汉库麻辣香锅",
+            name: "汉库麻辣香锅"
           },
           {
             url:
               "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3728634894,1931124514&fm=26&gp=0.jpg",
             tag: "猜你喜欢",
-            name: "汉库麻辣香锅",
-          },
-        ],
-      },
+            name: "汉库麻辣香锅"
+          }
+        ]
+      }
     };
-  },
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/style/var.scss";
-@import "@/style/dark.scss";
 .home {
   &-tag {
     padding: 0 12px;
@@ -318,10 +268,9 @@ export default {
       height: 2px;
       display: inline-block;
       border-radius: $border-radius-max;
-      background: #fff;
+      background-color: #fff;
       opacity: 0.2;
       margin: 0 2px;
-      @include dark-ccc;
     }
     /deep/.ele-bullet-active {
       opacity: 1;
@@ -335,9 +284,6 @@ export default {
       display: inline-block;
       margin: 0 1px;
       color: #fe4b32;
-      @media (prefers-color-scheme: dark) {
-        color: #ca3825;
-      }
     }
     &__block {
       display: inline-block;
@@ -348,20 +294,13 @@ export default {
       font-size: 12px;
       text-align: center;
       background-color: #fe4b32;
-      @include dark-filter();
       border-radius: $border-radius-sm;
     }
   }
 
   &-card {
-    margin: $padding-sm;
-    // background-color: lawngreen;
+    margin: 0 $padding-sm;
     box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.16);
-    @media (prefers-color-scheme: dark) {
-      box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.48),
-        0 6px 16px 0 rgba(0, 0, 0, 0.32), 0 9px 28px 8px rgba(0, 0, 0, 0.2);
-      background-color: #1f1f1f;
-    }
     border-radius: $border-radius-lg;
     display: flex;
     .card-left-content {

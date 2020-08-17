@@ -2,24 +2,13 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 22:45:16
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-16 14:21:35
+ * @LastEditTime: 2020-08-17 23:38:38
  * @FilePath: /six-ele/src/components/Grid-item/index.vue
 -->
 <template>
-  <div
-    class="grid-item "
-    :class="{ 'grid-item--square': this.$parent.square }"
-    :style="style"
-  >
-    <div
-      class="grid-item__content"
-      :class="{ 'grid-item__content--square': this.$parent.square }"
-    >
-      <svg-icon
-        class="grid-item__icon"
-        :icon-class="icon"
-        :size="this.$parent.iconSize"
-      />
+  <div class="grid-item" :class="{ 'grid-item--square': this.$parent.square }" :style="style">
+    <div class="grid-item__content" :class="{ 'grid-item__content--square': this.$parent.square }">
+      <svg-icon class="grid-item__icon" :icon-class="icon" :size="this.$parent.iconSize" />
       <span class="grid-item__text">{{ text }}</span>
     </div>
   </div>
@@ -30,7 +19,7 @@ export default {
   name: "GridItem",
   props: {
     icon: String,
-    text: String,
+    text: String
   },
   computed: {
     style() {
@@ -38,7 +27,7 @@ export default {
       const percent = `${100 / columnNum}%`;
 
       const style = {
-        flexBasis: percent,
+        flexBasis: percent
       };
 
       if (square) {
@@ -46,8 +35,8 @@ export default {
       }
 
       return style;
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -64,7 +53,6 @@ export default {
     height: 100%;
     padding: $grid-item-content-padding;
     background-color: $grid-item-content-background-color;
-    @include bg-color();
     &--square {
       position: absolute;
       top: 0;
