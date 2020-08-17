@@ -12,9 +12,6 @@
     transform: scale(0.5);
     box-sizing: border-box;
     pointer-events: none;
-    @media (prefers-color-scheme: dark) {
-      border: 0 solid $border-color-dark;
-    }
   }
 }
 
