@@ -17,6 +17,9 @@ $orange-dark: #ed6a0c;
 $orange-light: #fffbe8;
 $green: #07c160;
 
+// Gradient Colors
+$gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
+
 // Component Colors
 $text-color: $gray-8;
 
@@ -46,6 +49,11 @@ $line-height-xs: 14px;
 $line-height-sm: 18px;
 $line-height-md: 20px;
 $line-height-lg: 22px;
+$base-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+  Helvetica, Segoe UI, Arial, Roboto, "PingFang SC", "Hiragino Sans GB",
+  "Microsoft Yahei", sans-serif;
+$price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
+  sans-serif;
 
 // GridItem
 $grid-item-content-padding: $padding-base;
@@ -58,3 +66,17 @@ $grid-item-text-font-size: $font-size-sm;
 $count-down-text-color: $text-color;
 $count-down-font-size: $font-size-md;
 $count-down-line-height: $line-height-md;
+
+// SubmitBar
+$submit-bar-z-index: 100;
+$submit-bar-height: 50px;
+$submit-bar-background-color: $white;
+$submit-bar-price-color: $red;
+$submit-bar-padding: 0 $padding-md;
+$submit-bar-text-font-size: $font-size-md;
+$submit-bar-text-color: $text-color;
+$submit-bar-price-integer-font-size: 20px;
+$submit-bar-price-font-family: $price-integer-font-family;
+$submit-bar-button-width: 110px;
+$submit-bar-button-height: 40px;
+$goods-action-button-danger-color: $gradient-red;
