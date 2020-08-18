@@ -6,7 +6,7 @@
  * @FilePath: /six-ele/src/components/Tabbar-item/index.vue
 -->
 <template>
-  <router-link :to="to" class="tabbar-item" active-class="active">
+  <router-link :to="to" class="tabbar-item" active-class="tabbar-item--active">
     <svg-icon class="tabbar-item__icon" :name="icon" size="22px" />
     <p>{{ title }}</p>
   </router-link>
@@ -40,8 +40,8 @@ export default {
     margin-bottom: $tabbar-item-margin-bottom;
     font-size: $tabbar-item-icon-size;
   }
-}
-.active {
-  color: $yellow;
+  &--active {
+    color: $tabbar-item-active-color;
+  }
 }
 </style>
