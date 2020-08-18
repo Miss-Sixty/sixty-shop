@@ -2,12 +2,14 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 18:46:48
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-18 18:11:49
+ * @LastEditTime: 2020-08-18 20:33:32
  * @FilePath: /six-ele/src/router/index.ts
  */
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Index from "@/views/index.vue";
+import Me from "./modules/me";
+import Login from "./modules/login";
 
 Vue.use(VueRouter);
 
@@ -59,6 +61,8 @@ const routes: Array<RouteConfig> = [
       },
     ],
   },
+  ...Me,
+  ...Login,
 ];
 
 const router = new VueRouter({
