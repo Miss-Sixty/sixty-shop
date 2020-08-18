@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-18 10:53:34
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-18 11:55:17
+ * @LastEditTime: 2020-08-18 19:07:26
  * @FilePath: /six-ele/src/components/Checkbox/index.vue
 -->
 <template>
@@ -16,7 +16,7 @@
       class="checkbox__icon "
       :class="value ? 'checkbox__icon--checked' : ''"
     >
-      <svg-icon icon-class="success" :size="iconSize" />
+      <svg-icon name="check-line" :size="iconSize" />
     </div>
 
     <span class="checkbox__label" v-if="text">{{ text }}</span>

@@ -2,15 +2,11 @@
  * @Author: 张喜贺
  * @Date: 2020-08-18 01:45:18
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-18 11:53:01
+ * @LastEditTime: 2020-08-18 19:06:42
  * @FilePath: /six-ele/src/components/SubmitBar/index.vue
 -->
 <template>
   <div class="submit-bar hairline--top">
-    <!-- <p class="select-all">
-      <svg-icon icon-class="passed" size="16" />
-      全选
-    </p> -->
     <checkbox v-model="checked" text="全选" />
 
     <div class="submit-bar__text">

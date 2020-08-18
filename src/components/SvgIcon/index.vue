@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 19:39:17
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-18 18:44:53
+ * @LastEditTime: 2020-08-18 19:27:26
  * @FilePath: /six-ele/src/components/SvgIcon/index.vue
 -->
 <template>
@@ -14,7 +14,7 @@
     v-on="$listeners"
     :style="{ fontSize: size }"
   >
-    <use :xlink:href="`#icon-${this.name}`" />
+    <use :xlink:href="`#icon-${name}`" />
   </svg>
 </template>
 

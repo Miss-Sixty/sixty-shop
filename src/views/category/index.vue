@@ -53,7 +53,7 @@
                     <span>¥199</span>
                     <span>299</span>
                   </p>
-                  <svg-icon icon-class="shopping-cart" size="16" color="#fff" />
+                  <svg-icon name="shopping-cart-line" size="16" color="#fff" />
                 </six-row>
               </div>
             </six-row>

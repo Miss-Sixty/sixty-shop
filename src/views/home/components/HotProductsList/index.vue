@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-17 23:59:16
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-18 00:41:33
+ * @LastEditTime: 2020-08-18 19:04:20
  * @FilePath: /six-ele/src/views/home/components/HotProductsList/index.vue
 -->
 <template>
@@ -27,7 +27,7 @@
           <span>¥230</span>
           <span>¥330</span>
         </p>
-        <svg-icon icon-class="shopping-cart" size="16" color="#fff" />
+        <svg-icon name="shopping-cart-line" size="16" color="#fff" />
       </six-row>
     </div>
   </div>
