@@ -22,6 +22,9 @@ $gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
 
 // Component Colors
 $text-color: $gray-8;
+$active-color: $gray-2;
+$active-opacity: 0.7;
+$background-color: $gray-1;
 
 // Border
 $border-color: $gray-3;
@@ -80,3 +83,13 @@ $submit-bar-price-font-family: $price-integer-font-family;
 $submit-bar-button-width: 110px;
 $submit-bar-button-height: 40px;
 $goods-action-button-danger-color: $gradient-red;
+
+// Stepper
+$stepper-button-round-theme-color: $red;
+$stepper-input-width: 32px;
+$stepper-input-height: 28px;
+$stepper-border-radius: $border-radius-md;
+
+$stepper-input-text-color: $text-color;
+$stepper-input-font-size: $font-size-md;
+$stepper-input-line-height: normal;

@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 18:52:26
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-18 02:25:05
+ * @LastEditTime: 2020-08-18 10:31:11
  * @FilePath: /six-ele/src/views/shoppingCart/index.vue
 -->
 <template>
@@ -35,7 +35,12 @@
                 <span>¥55</span>
                 <span>¥75</span>
               </p>
-              <div>步进器</div>
+              <stepper
+                v-model="stepperValue"
+                @change="onChange"
+                button-size="22"
+                @overlimit="overlimit"
+              />
             </six-row>
           </div>
         </six-row>
@@ -49,9 +54,25 @@
 <script>
 import SixRow from "@/components/Row";
 import SubmitBar from "@/components/SubmitBar";
+import Stepper from "@/components/Stepper";
 export default {
   name: "ShoppingCart",
-  components: { SixRow, SubmitBar },
+  components: { SixRow, SubmitBar, Stepper },
+  data() {
+    return {
+      stepperValue: 1,
+    };
+  },
+  methods: {
+    onChange(value) {
+      this.stepperValue = value;
+      console.log(value);
+    },
+
+    overlimit() {
+      console.log(22);
+    },
+  },
 };
 </script>
 
