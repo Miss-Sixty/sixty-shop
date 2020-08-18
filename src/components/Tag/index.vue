@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 21:38:28
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-17 23:50:41
+ * @LastEditTime: 2020-08-18 18:51:28
  * @FilePath: /six-ele/src/components/Tag/index.vue
 -->
 <template>
@@ -13,7 +13,7 @@
       border-radius:${radius}`
     "
   >
-    <svg-icon v-if="icon" :icon-class="icon" size="10px" />
+    <svg-icon v-if="icon" :name="icon" />
     {{ text }}
   </span>
 </template>
@@ -26,8 +26,8 @@ export default {
     color: String,
     bgColor: String,
     icon: String,
-    radius: String
-  }
+    radius: String,
+  },
 };
 </script>
 
@@ -42,8 +42,5 @@ export default {
   position: relative;
   display: inline-flex;
   align-items: center;
-  .svg-icon {
-    margin-right: 4px;
-  }
 }
 </style>
