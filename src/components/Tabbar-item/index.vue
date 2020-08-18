@@ -2,12 +2,12 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 19:09:11
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-13 20:32:07
+ * @LastEditTime: 2020-08-18 18:57:57
  * @FilePath: /six-ele/src/components/Tabbar-item/index.vue
 -->
 <template>
   <router-link :to="to" class="tabbar-item" active-class="active">
-    <svg-icon :icon-class="icon" size="20px" />
+    <svg-icon class="tabbar-item__icon" :name="icon" size="22px" />
     <p>{{ title }}</p>
   </router-link>
 </template>
@@ -26,14 +26,19 @@ export default {
 @import "@/style/var.scss";
 
 .tabbar-item {
-  flex: 1;
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
-  line-height: 1;
-  p {
-    font-size: 12px;
-    margin-top: 4px;
+  justify-content: center;
+  color: $tabbar-item-text-color;
+  font-size: $tabbar-item-font-size;
+  line-height: $tabbar-item-line-height;
+
+  &__icon {
+    position: relative;
+    margin-bottom: $tabbar-item-margin-bottom;
+    font-size: $tabbar-item-icon-size;
   }
 }
 .active {
