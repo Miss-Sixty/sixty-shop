@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 18:52:30
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-18 13:12:19
+ * @LastEditTime: 2020-08-18 20:22:13
  * @FilePath: /six-ele/src/views/me/index.vue
 -->
 <template>
@@ -10,19 +10,25 @@
     <div class="me-login">
       <img
         src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3728634894,1931124514&fm=26&gp=0.jpg"
-        alt=""
         width="50px"
         height="50px"
         style="border-radius:50%"
       />
       <p class="me-login__text">
         立即登陆
-        <svg-icon icon-class="success" />
+        <svg-icon name="arrow-right-line" />
       </p>
     </div>
 
     <div class="me-cell">
-      <cell title="单元格" isLink clickable @click="onClick" />
+      <cell
+        v-for="(item, index) in cellList"
+        :key="index"
+        :title="item.title"
+        isLink
+        clickable
+        :to="item.to"
+      />
     </div>
   </div>
 </template>
@@ -32,11 +38,21 @@ import Cell from "@/components/Cell";
 export default {
   name: "Me",
   components: { Cell },
-  methods: {
-    onClick(e) {
-      console.log(e);
-    },
+  data() {
+    return {
+      cellList: [
+        {
+          title: "关于",
+          to: "about",
+        },
+        {
+          title: "用户协议",
+          to: "protocol",
+        },
+      ],
+    };
   },
+  methods: {},
 };
 </script>
 
@@ -71,6 +87,7 @@ export default {
   }
 
   &-cell {
+    overflow: hidden;
     margin: $me-cell-margin;
     background-color: $me-cell-background-color;
     box-shadow: $me-cell-box-shadow;
