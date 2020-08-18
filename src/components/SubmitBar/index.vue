@@ -2,15 +2,16 @@
  * @Author: 张喜贺
  * @Date: 2020-08-18 01:45:18
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-18 02:23:26
+ * @LastEditTime: 2020-08-18 11:53:01
  * @FilePath: /six-ele/src/components/SubmitBar/index.vue
 -->
 <template>
   <div class="submit-bar hairline--top">
-    <p class="select-all">
+    <!-- <p class="select-all">
       <svg-icon icon-class="passed" size="16" />
       全选
-    </p>
+    </p> -->
+    <checkbox v-model="checked" text="全选" />
 
     <div class="submit-bar__text">
       <span>合计：</span>
@@ -24,9 +25,15 @@
 
 <script>
 import Button from "@/components/Button";
+import Checkbox from "@/components/Checkbox";
 export default {
   name: "SubmitBar",
-  components: { Button },
+  components: { Button, Checkbox },
+  data() {
+    return {
+      checked: true,
+    };
+  },
 };
 </script>
 

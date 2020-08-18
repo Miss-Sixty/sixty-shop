@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 18:52:26
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-18 10:31:11
+ * @LastEditTime: 2020-08-18 11:56:22
  * @FilePath: /six-ele/src/views/shoppingCart/index.vue
 -->
 <template>
@@ -15,7 +15,7 @@
         v-for="item in 2"
         :key="item"
       >
-        <svg-icon icon-class="passed" size="20" />
+        <checkbox v-model="checked" style="margin-right:10px" />
         <six-row class="card" type="flex" align="center">
           <img
             src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597338557818&di=27c3917e22963e3549111637d96ef23f&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F0%2F59929c0367397.jpg"
@@ -55,12 +55,14 @@
 import SixRow from "@/components/Row";
 import SubmitBar from "@/components/SubmitBar";
 import Stepper from "@/components/Stepper";
+import Checkbox from "@/components/Checkbox";
 export default {
   name: "ShoppingCart",
-  components: { SixRow, SubmitBar, Stepper },
+  components: { SixRow, SubmitBar, Stepper, Checkbox },
   data() {
     return {
       stepperValue: 1,
+      checked: false,
     };
   },
   methods: {
@@ -90,10 +92,6 @@ export default {
     background-color: $white;
     &-item {
       padding: $padding-xs 0;
-
-      .svg-icon {
-        margin-right: 10px;
-      }
       .card {
         flex: 1;
 
