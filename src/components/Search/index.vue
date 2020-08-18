@@ -2,15 +2,20 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 20:56:42
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-17 23:39:11
+ * @LastEditTime: 2020-08-18 18:49:53
  * @FilePath: /six-ele/src/components/Search/index.vue
 -->
 <template>
   <div style="padding:10px 12px">
     <div class="search">
-      <svg-icon icon-class="search" />
+      <svg-icon name="search" size="20" />
       <input type="text" class="search-input" :placeholder="placeholder" />
-      <Button text="搜索" round bg-color="linear-gradient(to right, #2DC8FE, #02ACF5)" color="#fff" />
+      <Button
+        text="搜索"
+        round
+        bg-color="linear-gradient(to right, #2DC8FE, #02ACF5)"
+        color="#fff"
+      />
     </div>
   </div>
 </template>
@@ -22,8 +27,8 @@ export default {
   components: { Button },
   props: {
     icon: String,
-    placeholder: String
-  }
+    placeholder: String,
+  },
 };
 </script>
 
@@ -36,7 +41,7 @@ export default {
   border-radius: $border-radius-max;
   padding-right: 4px;
   .svg-icon {
-    margin: 0 10px 0 12px;
+    margin: 0 8px 0 12px;
   }
   &-input {
     height: 36px;
