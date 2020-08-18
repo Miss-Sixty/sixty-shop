@@ -2,7 +2,7 @@
  * @Author: 张喜贺
  * @Date: 2020-08-13 18:48:56
  * @LastEditors: 张喜贺
- * @LastEditTime: 2020-08-18 00:40:44
+ * @LastEditTime: 2020-08-18 18:45:02
  * @FilePath: /six-ele/src/views/home/index.vue
 -->
 <template>
@@ -30,9 +30,9 @@
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
 
-    <grid column-num="5" icon-size="20">
+    <grid column-num="5" icon-size="35">
       <grid-item
-        v-for="(item, index) in gridList2"
+        v-for="(item, index) in mallNav"
         :key="index"
         :icon="item.icon"
         :text="item.text"
@@ -168,7 +168,7 @@ export default {
           text: "88金粉节",
           color: "#FF5028",
           bgColor: "#FDEFED",
-          icon: "hot",
+          icon: "fire-fill",
         },
         {
           text: "麻辣烫",
@@ -200,45 +200,45 @@ export default {
           bulletActiveClass: "ele-bullet-active",
         },
       },
-      gridList2: [
+      mallNav: [
         {
-          icon: "chicken",
-          text: "晚餐",
+          icon: require("@/assets/imgs/1.png"),
+          text: "全球购",
         },
         {
-          icon: "fruit",
-          text: "水果",
+          icon: require("@/assets/imgs/2.png"),
+          text: "9.9元拼",
         },
         {
-          icon: "drink",
-          text: "甜品饮品",
+          icon: require("@/assets/imgs/3.png"),
+          text: "服饰",
         },
         {
-          icon: "dish",
-          text: "买菜",
+          icon: require("@/assets/imgs/4.png"),
+          text: "生鲜",
         },
         {
-          icon: "drug",
-          text: "送药上门",
+          icon: require("@/assets/imgs/5.png"),
+          text: "充值缴费",
         },
         {
-          icon: "woman",
-          text: "丽人/医美",
+          icon: require("@/assets/imgs/6.png"),
+          text: "旅行",
         },
         {
-          icon: "coupon",
-          text: "省钱好券",
+          icon: require("@/assets/imgs/7.png"),
+          text: "超市",
         },
         {
-          icon: "takeaway",
-          text: "配送减免",
+          icon: require("@/assets/imgs/8.png"),
+          text: "数码电器",
         },
         {
-          icon: "box",
-          text: "跑腿代购",
+          icon: require("@/assets/imgs/9.png"),
+          text: "美妆馆",
         },
         {
-          icon: "more",
+          icon: require("@/assets/imgs/10.png"),
           text: "全部分类",
         },
       ],
