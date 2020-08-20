@@ -1,0 +1,94 @@
+@import "@/style/var.scss";
+
+.button {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  height: $button-height;
+  margin: 0;
+  padding: 0;
+  font-size: $button-font-size;
+  line-height: $button-line-height;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity $animation-duration-fast;
+  color: $button-color;
+  background-color: $button-background-color;
+  border-width: $button-border-width;
+  border-color: $button-border-color;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: $black;
+    border: inherit;
+    border-color: $black;
+    border-radius: inherit; /* inherit parent's border radius */
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    content: " ";
+  }
+
+  &:active::before {
+    opacity: 0.1;
+  }
+
+  // see: https://bugs.webkit.org/show_bug.cgi?id=169700
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &--primary {
+    color: $button-primary-color;
+    background-color: $button-primary-background-color;
+    border: $button-border-width solid $button-primary-border-color;
+  }
+
+  &--plain {
+    border-style: solid;
+  }
+
+  &--dashed {
+    border-style: dashed;
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: $button-disabled-opacity;
+  }
+
+  &--ghost {
+    background-color: rgba($color: #000000, $alpha: 0);
+    &.button--primary {
+      color: $button-primary-background-color;
+    }
+  }
+
+  &--normal {
+    padding: 0 15px;
+    font-size: $button-normal-font-size;
+  }
+
+  &--small {
+    height: $button-small-height;
+    padding: 0 15px;
+    font-size: $button-small-font-size;
+  }
+
+  &--mini {
+    height: $button-mini-height;
+    padding: 0 $padding-xs;
+    font-size: $button-mini-font-size;
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+  }
+}

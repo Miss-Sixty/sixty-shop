@@ -24,6 +24,7 @@ $gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
 $text-color: $gray-8;
 $active-color: $gray-2;
 $active-opacity: 0.7;
+$disabled-opacity: 0.5;
 $background-color: $gray-1;
 $box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.16);
 
@@ -150,4 +151,22 @@ $field-placeholder-text-color: $gray-5;
 
 // Button
 $button-normal-font-size: $font-size-md;
-$button-default-height: 44px;
+$button-font-size: $font-size-lg;
+$button-height: 44px;
+$button-line-height: 1.2;
+$button-color: $text-color;
+$button-background-color: $white;
+$button-border-color: $border-color;
+$button-border-width: $border-width-base;
+
+$button-primary-color: $white;
+$button-primary-background-color: $blue;
+$button-primary-border-color: $blue;
+
+$button-plain-background-color: $white;
+$button-disabled-opacity: $disabled-opacity;
+
+$button-small-height: 32px;
+$button-small-font-size: $font-size-sm;
+$button-mini-height: 24px;
+$button-mini-font-size: $font-size-xs;
